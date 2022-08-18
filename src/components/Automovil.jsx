@@ -7,7 +7,7 @@ const Automovil = () => {
             <div id="vehiculo">
             <fieldset>
                 <legend> 
-                <h2>InhtmlFormacion Automovil</h2>
+                <h2>Informacion Automovil</h2>
                 </legend>  
                 <div className="contenedor-campos" id="tipo">
                 <div className="campos">

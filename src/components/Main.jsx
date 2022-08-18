@@ -9,8 +9,6 @@ const Main = () => {
   // se define el nombre de la variable y el metodo que le cambia el valor ademas se le da un valorn inicial.
   const [ estado, setEstado ] = useState(false);
 
-  
-
   const handletSudmit = e => {
     e.preventDefault();
     setEstado(!estado);
