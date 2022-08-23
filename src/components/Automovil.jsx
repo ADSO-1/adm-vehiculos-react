@@ -69,7 +69,7 @@ const Automovil = ({bdVehiculo, SetBdVehiculo}) => {
                                 <label htmlFor="placa">
                                 Placa:
                                 <input 
-                                    className="input-text" 
+                                    className="input-text text-black" 
                                     type="text" 
                                     id="placa" 
                                     placeholder="Tu placa" 
