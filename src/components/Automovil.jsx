@@ -82,7 +82,7 @@ const Automovil = ({bdVehiculo, SetBdVehiculo}) => {
                                 <label htmlFor="marca">
                                 Marca:
                                 <input 
-                                    className="input-text" 
+                                    className="input-text text-black" 
                                     type="text" 
                                     id="marca" 
                                     placeholder="Tu marca" 
@@ -96,7 +96,7 @@ const Automovil = ({bdVehiculo, SetBdVehiculo}) => {
                                 <label htmlFor="color">
                                 Color:
                                 <input 
-                                    className="input-text" 
+                                    className="input-text text-black" 
                                     type="text" 
                                     id="color" 
                                     placeholder="Tu color" 
@@ -109,7 +109,7 @@ const Automovil = ({bdVehiculo, SetBdVehiculo}) => {
                                 <label htmlFor="num-puerta">
                                     Numero puertas:
                                     <input 
-                                        className="input-text" 
+                                        className="input-text text-black" 
                                         type="number" 
                                         id="num-puerta" 
                                         placeholder="Numero puertas"
