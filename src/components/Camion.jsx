@@ -63,7 +63,7 @@ const Camion = ({bdVehiculo, SetBdVehiculo}) => {
                                 <label htmlFor="marca">
                                 Marca:
                                 <input 
-                                    className="input-tex text-blackt" 
+                                    className="input-tex text-black" 
                                     type="text" 
                                     id="marca" 
                                     placeholder="Tu marca" 
