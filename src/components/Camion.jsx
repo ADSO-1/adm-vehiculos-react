@@ -50,7 +50,7 @@ const Camion = ({bdVehiculo, SetBdVehiculo}) => {
                                 <label htmlFor="placa">
                                 Placa:
                                 <input 
-                                    className="input-text" 
+                                    className="input-text text-black" 
                                     type="text" 
                                     id="placa" 
                                     placeholder="Tu placa" 
@@ -63,7 +63,7 @@ const Camion = ({bdVehiculo, SetBdVehiculo}) => {
                                 <label htmlFor="marca">
                                 Marca:
                                 <input 
-                                    className="input-text" 
+                                    className="input-tex text-blackt" 
                                     type="text" 
                                     id="marca" 
                                     placeholder="Tu marca" 
@@ -77,7 +77,7 @@ const Camion = ({bdVehiculo, SetBdVehiculo}) => {
                                 <label htmlFor="color">
                                 Color:
                                 <input 
-                                    className="input-text" 
+                                    className="input-text text-black" 
                                     type="text" 
                                     id="color" 
                                     placeholder="Tu color" 
@@ -90,7 +90,7 @@ const Camion = ({bdVehiculo, SetBdVehiculo}) => {
                                 <label htmlFor="cap-max">
                                     Capacidad Maxima:
                                     <input 
-                                        className="input-text" 
+                                        className="input-text text-black" 
                                         type="number" 
                                         id="cap-max"
                                         placeholder="Capacidad Maxima"
