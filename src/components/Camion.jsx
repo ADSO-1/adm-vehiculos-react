@@ -1,5 +1,8 @@
 import { useState } from 'react';
 import Alerta from './Alerta';
+// Programacion Orientada a Objetos
+import ClaseCamion from '../model/Camion.js';
+import generarId from '../helper/funciones.js';
 
 const Camion = ({bdVehiculo, SetBdVehiculo}) => {
 
@@ -9,6 +12,18 @@ const Camion = ({bdVehiculo, SetBdVehiculo}) => {
     const [ capacidadMaxima, setCapacidadMaxima ] = useState("");
 
     const [ alerta, setAlerta ] = useState({});  
+
+    const [ vehiculo, setVehiculo ] = useState({});  
+
+    const sincronizarStorage = (bdVehiculo) => {
+        localStorage.setItem("bd_vehiculo", JSON.stringify(bdVehiculo));
+    }
+
+    const addVehiculo = (vehiculo) => {
+        bdVehiculo.push(vehiculo);
+        console.log(bdVehiculo);
+        sincronizarStorage(bdVehiculo);
+    } 
 
 
   const handletSudmit = (e) => {
@@ -25,6 +40,10 @@ const Camion = ({bdVehiculo, SetBdVehiculo}) => {
     setAlerta({
         msg: "Enviando Informacion"
     });
+
+    let id = generarId();
+    setVehiculo(addVehiculo(new ClaseCamion(id, capacidadMaxima,placa, marca, color)));
+
   };
 
   const { msg } = alerta;
@@ -50,7 +69,7 @@ const Camion = ({bdVehiculo, SetBdVehiculo}) => {
                                 <label htmlFor="placa">
                                 Placa:
                                 <input 
-                                    className="input-text" 
+                                    className="input-text text-black" 
                                     type="text" 
                                     id="placa" 
                                     placeholder="Tu placa" 
@@ -63,7 +82,7 @@ const Camion = ({bdVehiculo, SetBdVehiculo}) => {
                                 <label htmlFor="marca">
                                 Marca:
                                 <input 
-                                    className="input-text" 
+                                    className="input-text text-black" 
                                     type="text" 
                                     id="marca" 
                                     placeholder="Tu marca" 
@@ -77,7 +96,7 @@ const Camion = ({bdVehiculo, SetBdVehiculo}) => {
                                 <label htmlFor="color">
                                 Color:
                                 <input 
-                                    className="input-text" 
+                                    className="input-text text-black" 
                                     type="text" 
                                     id="color" 
                                     placeholder="Tu color" 
@@ -90,7 +109,7 @@ const Camion = ({bdVehiculo, SetBdVehiculo}) => {
                                 <label htmlFor="cap-max">
                                     Capacidad Maxima:
                                     <input 
-                                        className="input-text" 
+                                        className="input-text text-black" 
                                         type="number" 
                                         id="cap-max"
                                         placeholder="Capacidad Maxima"

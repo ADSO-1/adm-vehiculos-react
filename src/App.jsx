@@ -16,6 +16,7 @@ function App() {
 
   const [ bdVehiculo, SetBdVehiculo ] = useState([]);
 
+  
   useEffect(() =>{
     const consultarStorage = () => {
       SetBdVehiculo(JSON.parse(localStorage.getItem('bd_vehiculo') ) || []);

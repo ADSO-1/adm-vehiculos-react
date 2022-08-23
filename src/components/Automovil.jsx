@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Alerta from './Alerta';
 // Programacion Orientada a Objetos
-import Auto from '../model/Auto.js';
+import ClaseAuto from '../model/Auto.js';
 import generarId from '../helper/funciones.js';
 
 const Automovil = ({bdVehiculo, SetBdVehiculo}) => {
@@ -15,11 +15,15 @@ const Automovil = ({bdVehiculo, SetBdVehiculo}) => {
     
     const [ vehiculo, setVehiculo ] = useState({});  
 
+    const sincronizarStorage = (bdVehiculo) => {
+        localStorage.setItem("bd_vehiculo", JSON.stringify(bdVehiculo));
+    }
 
     const addVehiculo = (vehiculo) => {
+        console.log(vehiculo);
         bdVehiculo.push(vehiculo);
         console.log(bdVehiculo);
-        //sincronizarStorage(bdVehiculo);
+        sincronizarStorage(bdVehiculo);
     }  
 
     const handletSudmit = (e) => {
@@ -33,15 +37,12 @@ const Automovil = ({bdVehiculo, SetBdVehiculo}) => {
             return;
         }
 
+        let id = generarId();
+        setVehiculo(addVehiculo(new ClaseAuto(id, numeroPuerta,placa, marca, color)));
+
         setAlerta({
             msg: "Enviando Informacion"
         });
-
-        let id = generarId();
-        setVehiculo(new Auto(id, numeroPuerta,placa, marca, color));
-        console.log(vehiculo);
-        addVehiculo(vehiculo);
-        
     }    
 
   const { msg } = alerta;
@@ -50,9 +51,9 @@ const Automovil = ({bdVehiculo, SetBdVehiculo}) => {
     <>
         <main className="md:w-3/5  xl:w-4/5 px-5 py-10 bg-gray-200 contenedor sombra">
             <form 
-            className="formulario" 
-            id="formulario"
-            onSubmit={handletSudmit}          
+                className="formulario" 
+                id="formulario"
+                onSubmit={handletSudmit}          
             >
 
                 <div id="contenedor-veh">    
@@ -69,7 +70,7 @@ const Automovil = ({bdVehiculo, SetBdVehiculo}) => {
                                 <label htmlFor="placa">
                                 Placa:
                                 <input 
-                                    className="input-text" 
+                                    className="input-text text-black" 
                                     type="text" 
                                     id="placa" 
                                     placeholder="Tu placa" 
@@ -82,7 +83,7 @@ const Automovil = ({bdVehiculo, SetBdVehiculo}) => {
                                 <label htmlFor="marca">
                                 Marca:
                                 <input 
-                                    className="input-text" 
+                                    className="input-text text-black" 
                                     type="text" 
                                     id="marca" 
                                     placeholder="Tu marca" 
@@ -96,7 +97,7 @@ const Automovil = ({bdVehiculo, SetBdVehiculo}) => {
                                 <label htmlFor="color">
                                 Color:
                                 <input 
-                                    className="input-text" 
+                                    className="input-text text-black" 
                                     type="text" 
                                     id="color" 
                                     placeholder="Tu color" 
@@ -109,7 +110,7 @@ const Automovil = ({bdVehiculo, SetBdVehiculo}) => {
                                 <label htmlFor="num-puerta">
                                     Numero puertas:
                                     <input 
-                                        className="input-text" 
+                                        className="input-text text-black" 
                                         type="number" 
                                         id="num-puerta" 
                                         placeholder="Numero puertas"

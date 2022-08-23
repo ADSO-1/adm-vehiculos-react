@@ -1,5 +1,8 @@
 import { useState } from 'react';
 import Alerta from './Alerta';
+// Programacion Orientada a Objetos
+import ClaseMoto from '../model/Moto.js';
+import generarId from '../helper/funciones.js';
 
 const Moto = ({bdVehiculo, SetBdVehiculo}) => {
 
@@ -9,6 +12,19 @@ const Moto = ({bdVehiculo, SetBdVehiculo}) => {
     const [ numeroLlantas, setNumeroLlantas ] = useState("");
 
     const [ alerta, setAlerta ] = useState({});  
+
+    const [ vehiculo, setVehiculo ] = useState({});  
+
+
+    const sincronizarStorage = (bdVehiculo) => {
+        localStorage.setItem("bd_vehiculo", JSON.stringify(bdVehiculo));
+    }
+
+    const addVehiculo = (vehiculo) => {
+        bdVehiculo.push(vehiculo);
+        console.log(bdVehiculo);
+        sincronizarStorage(bdVehiculo);
+    } 
 
 
   const handletSudmit = (e) => {
@@ -25,6 +41,10 @@ const Moto = ({bdVehiculo, SetBdVehiculo}) => {
     setAlerta({
         msg: "Enviando Informacion"
     });
+
+    let id = generarId();
+    setVehiculo(addVehiculo(new ClaseMoto(id, numeroLlantas,placa, marca, color)));
+
   };
 
   const { msg } = alerta;
@@ -52,7 +72,7 @@ const Moto = ({bdVehiculo, SetBdVehiculo}) => {
                                 <label htmlFor="placa">
                                 Placa:
                                 <input 
-                                    className="input-text" 
+                                    className="input-text text-black" 
                                     type="text" 
                                     id="placa" 
                                     placeholder="Tu placa" 
@@ -65,7 +85,7 @@ const Moto = ({bdVehiculo, SetBdVehiculo}) => {
                                 <label htmlFor="marca">
                                 Marca:
                                 <input 
-                                    className="input-text" 
+                                    className="input-text text-black" 
                                     type="text" 
                                     id="marca" 
                                     placeholder="Tu marca" 
@@ -79,7 +99,7 @@ const Moto = ({bdVehiculo, SetBdVehiculo}) => {
                                 <label htmlFor="color">
                                 Color:
                                 <input 
-                                    className="input-text" 
+                                    className="input-text text-black" 
                                     type="text" 
                                     id="color" 
                                     placeholder="Tu color" 
@@ -92,7 +112,7 @@ const Moto = ({bdVehiculo, SetBdVehiculo}) => {
                                 <label htmlFor="num-llantas">
                                     Numero llantas:
                                     <input 
-                                        className="input-text" 
+                                        className="input-text text-black" 
                                         type="number" 
                                         id="num-llantas" 
                                         placeholder="Numero llantas"

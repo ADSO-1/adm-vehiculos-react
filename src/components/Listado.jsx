@@ -1,4 +1,6 @@
-const Listado = () => {
+import ListadoVehiculo from './listadoVehiculo';
+
+const Listado = ({bdVehiculo}) => {
   return (
     <div className="formulario">
         {/* <!-- Listado Vehiculo  --> */}
@@ -27,13 +29,18 @@ const Listado = () => {
                                     </th>
                                 </tr>
                             </thead>
-                            <tbody id="listado-vehiculo" className="bg-white"></tbody>
+                            {/* Listado Individual de los vehiculos */}
+
+                            <ListadoVehiculo 
+                                bdVehiculo={bdVehiculo}
+                            />
+
                         </table>
                     </div>
                 </div>
             </div>
         </main>  
-        <input class="boton" type="submit" value="Consultar" id="finAll"></input>
+        
     </div>
     
   )
