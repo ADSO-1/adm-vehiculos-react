@@ -52,7 +52,7 @@ const Moto = ({bdVehiculo, SetBdVehiculo}) => {
                                 <label htmlFor="placa">
                                 Placa:
                                 <input 
-                                    className="input-text" 
+                                    className="input-text text-black" 
                                     type="text" 
                                     id="placa" 
                                     placeholder="Tu placa" 
@@ -65,7 +65,7 @@ const Moto = ({bdVehiculo, SetBdVehiculo}) => {
                                 <label htmlFor="marca">
                                 Marca:
                                 <input 
-                                    className="input-text" 
+                                    className="input-text text-black" 
                                     type="text" 
                                     id="marca" 
                                     placeholder="Tu marca" 
@@ -79,7 +79,7 @@ const Moto = ({bdVehiculo, SetBdVehiculo}) => {
                                 <label htmlFor="color">
                                 Color:
                                 <input 
-                                    className="input-text" 
+                                    className="input-text text-black" 
                                     type="text" 
                                     id="color" 
                                     placeholder="Tu color" 
@@ -92,7 +92,7 @@ const Moto = ({bdVehiculo, SetBdVehiculo}) => {
                                 <label htmlFor="num-llantas">
                                     Numero llantas:
                                     <input 
-                                        className="input-text" 
+                                        className="input-text text-black" 
                                         type="number" 
                                         id="num-llantas" 
                                         placeholder="Numero llantas"
