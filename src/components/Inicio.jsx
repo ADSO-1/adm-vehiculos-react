@@ -1,6 +1,8 @@
 import Listado from './Listado';
 
-const Inicio = () => {
+const Inicio = ({bdVehiculo, SetBdVehiculo}) => {
+
+  console.log(bdVehiculo);
 
   return (
     <>
