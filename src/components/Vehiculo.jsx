@@ -1,24 +1,8 @@
-import { useState} from 'react';
 import React from 'react'
 
-const Vehiculo = ({vehiculo, bdVehiculo, SetBdVehiculo}) => {
+const Vehiculo = ({vehiculo, eliminarVehiculo}) => {
 
-  const [confirmar, setConfirmar  ] = useState(false);    
-
-  const eliminarVehiculo = (id) => {
-
-    // eslint-disable-next-line no-restricted-globals
-    setConfirmar(confirm('¿Confirmas que deseas eliminar?'));
-
-    if(confirmar) {
-        SetBdVehiculo(bdVehiculo.filter( vehiculo => vehiculo.id !== id ));
-
-        localStorage.setItem("bd_vehiculo", JSON.stringify(bdVehiculo));
-    }
-
-  }; 
-
-  return (
+return (
     <>
         <tbody id="listado-vehiculo" className="bg-white">
             <tr>

@@ -9,7 +9,7 @@ import Navegacion from '../components/Navegacion';
 
 const Layout = () => {
   return (
-    <div classNameName="App">
+    <div className="App">
       <Header />
       <SideBar />
 

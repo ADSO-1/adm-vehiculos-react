@@ -1,6 +1,24 @@
+import { useState, useEffect} from 'react';
 import ListadoVehiculo from './listadoVehiculo';
 
 const Listado = ({bdVehiculo, SetBdVehiculo}) => {
+
+    const [confirmar, setConfirmar  ] = useState(false);    
+
+    const eliminarVehiculo = (id) => {
+        // eslint-disable-next-line no-restricted-globals
+        setConfirmar(confirm('¿Confirmas que deseas eliminar?'));
+        if(confirmar) {
+            SetBdVehiculo(bdVehiculo.filter( vehiculo => vehiculo.id !== id ));
+        }
+    }; 
+
+    useEffect(() =>{
+        localStorage.removeItem("bd_vehiculo");
+        localStorage.setItem("bd_vehiculo", JSON.stringify(bdVehiculo));
+        console.log(bdVehiculo);
+    },[bdVehiculo]);
+
   return (
     <div className="formulario">
         {/* <!-- Listado Vehiculo  --> */}
@@ -33,7 +51,7 @@ const Listado = ({bdVehiculo, SetBdVehiculo}) => {
 
                             <ListadoVehiculo 
                                 bdVehiculo={bdVehiculo}
-                                SetBdVehiculo = {SetBdVehiculo}
+                                eliminarVehiculo = {eliminarVehiculo}
                             />
 
                         </table>

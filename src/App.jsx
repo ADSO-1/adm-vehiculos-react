@@ -24,6 +24,8 @@ function App() {
     consultarStorage();
   },[]);
 
+  
+
   return (
     <>
       <Router>
