@@ -20,6 +20,7 @@ const Inicio = ({bdVehiculo, SetBdVehiculo}) => {
                 {/* Components Listado */}
                 <Listado
                     bdVehiculo = {bdVehiculo}
+                    SetBdVehiculo = {SetBdVehiculo}
                 />
           </form>
         </div>

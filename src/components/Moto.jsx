@@ -22,7 +22,7 @@ const Moto = ({bdVehiculo, SetBdVehiculo}) => {
 
     const addVehiculo = (vehiculo) => {
         bdVehiculo.push(vehiculo);
-        console.log(bdVehiculo);
+        //console.log(bdVehiculo);
         sincronizarStorage(bdVehiculo);
     } 
 

@@ -1,6 +1,6 @@
 import ListadoVehiculo from './listadoVehiculo';
 
-const Listado = ({bdVehiculo}) => {
+const Listado = ({bdVehiculo, SetBdVehiculo}) => {
   return (
     <div className="formulario">
         {/* <!-- Listado Vehiculo  --> */}
@@ -33,6 +33,7 @@ const Listado = ({bdVehiculo}) => {
 
                             <ListadoVehiculo 
                                 bdVehiculo={bdVehiculo}
+                                SetBdVehiculo = {SetBdVehiculo}
                             />
 
                         </table>

@@ -4,7 +4,7 @@ import Vehiculo from './Vehiculo';
 import React from 'react'
 //import Alerta from './Alerta';
 
-const listadoVehiculo = ({bdVehiculo}) => {
+const listadoVehiculo = ({bdVehiculo, SetBdVehiculo}) => {
 
   return (
 
@@ -16,6 +16,8 @@ const listadoVehiculo = ({bdVehiculo}) => {
                                 <Vehiculo 
                                     key={vehiculo.id}
                                     vehiculo={vehiculo}
+                                    bdVehiculo = {bdVehiculo}
+                                    SetBdVehiculo = {SetBdVehiculo}
                                 />
                     ))
       
